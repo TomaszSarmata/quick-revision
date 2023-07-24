@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div>
       <Hero name="Tomasz"></Hero>
+
       <Bio text="I am a bootcamp student"></Bio>
 
       <BookGrid></BookGrid>
