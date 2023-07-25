@@ -1,10 +1,5 @@
 import BookItem from "./book-item";
-
-const books = [
-  { title: "Game of thrones", author: "George RR Martin" },
-  { title: "Atomic Habits", author: "James Clear" },
-  { title: "Born a Crime", author: "Trevor Noah" },
-];
+import { books } from "./books";
 
 export default function BookGrid() {
   return (
