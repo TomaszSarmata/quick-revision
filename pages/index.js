@@ -10,6 +10,8 @@ export default function Home() {
       <Bio text="I am a bootcamp student"></Bio>
 
       <BookGrid></BookGrid>
+
+      <a href="/example">Counter Example</a>
     </div>
   );
 }
