@@ -38,7 +38,8 @@ export default function BookGrid() {
         </div>
 
         <div className="my-10 italic text-xl">
-          The last liked book is: {lastLikedBook}
+          The last liked book is:{" "}
+          <span className="text-2xl text-red-500">{lastLikedBook}</span>
         </div>
       </div>
     </div>
