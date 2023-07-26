@@ -11,7 +11,9 @@ export default function Home() {
 
       <BookGrid></BookGrid>
 
-      <a href="/example">Counter Example</a>
+      <a href="/example" className="font-bold decoration-2 hover:underline">
+        Click me to see Counter Example
+      </a>
     </div>
   );
 }
