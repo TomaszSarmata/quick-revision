@@ -5,6 +5,7 @@ import { books } from "./books";
 export default function BookGrid() {
   const [mostLikedBook, setMostLikedBook] = useState("");
   const [numberOfLikes, setNumberOfLikes] = useState(0);
+  const [lastLikedBook, setLastLikedBook] = useState("");
 
   const handleLike = (details) => {
     let { title, likes } = details;
@@ -12,6 +13,7 @@ export default function BookGrid() {
       setMostLikedBook(title);
       setNumberOfLikes(likes);
     }
+    setLastLikedBook(title);
   };
 
   return (
@@ -33,6 +35,10 @@ export default function BookGrid() {
         </div>
         <div className="my-10 italic text-xl">
           The most liked book is: {mostLikedBook}
+        </div>
+
+        <div className="my-10 italic text-xl">
+          The last liked book is: {lastLikedBook}
         </div>
       </div>
     </div>
