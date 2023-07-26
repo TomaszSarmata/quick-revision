@@ -1,14 +1,21 @@
 import { useState } from "react";
 
-export default function BookItem({ title, author }) {
+export default function BookItem({ title, author, onLike }) {
   const [like, setLike] = useState(0);
   const [disLike, setDislike] = useState(0);
 
-  const handleLike = () => {
-    setLike(like + 1);
+  const handleIncrement = () => {
+    let newValue = like + 1;
+    let details = {
+      title: title,
+      likes: newValue,
+    };
+    onLike(details);
+
+    setLike(newValue);
   };
 
-  const handleDislike = () => {
+  const handleDecrement = () => {
     setDislike(disLike + 1);
   };
 
@@ -26,7 +33,7 @@ export default function BookItem({ title, author }) {
             <div className="flex flex-row justify-center w-full">
               <button
                 className="bg-blue-500 py-1 px-4 rounded-lg mt-5 text-white"
-                onClick={handleLike}
+                onClick={handleIncrement}
               >
                 Like ❤️
               </button>
@@ -39,7 +46,7 @@ export default function BookItem({ title, author }) {
             <div className="flex flex-row justify-center w-full">
               <button
                 className="bg-blue-500 py-1 px-4 rounded-lg mt-5 text-white"
-                onClick={handleDislike}
+                onClick={handleDecrement}
               >
                 Dislike 👎
               </button>
