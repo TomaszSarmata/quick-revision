@@ -20,6 +20,7 @@ export default function BookGrid() {
   const handleAddBook = () => {
     let book = { title: "works fine", author: "TZ" };
     let newBookArray = [];
+    // let newBooksArray = [...books, book]
 
     for (let i = 0; i < books.length; i++) {
       let b = books[i];
