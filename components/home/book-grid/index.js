@@ -7,6 +7,8 @@ export default function BookGrid() {
   const [numberOfLikes, setNumberOfLikes] = useState(0);
   const [lastLikedBook, setLastLikedBook] = useState("");
   const [books, setBooks] = useState(initialBooks);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
 
   const handleLike = (details) => {
     let { title, likes } = details;
@@ -17,8 +19,21 @@ export default function BookGrid() {
     setLastLikedBook(title);
   };
 
+  const handleSetTitle = (e) => {
+    let title = "";
+    title = e.target.value;
+    setTitle(title);
+  };
+
+  const handleSetAuthor = (e) => {
+    let author = "";
+    author = e.target.value;
+    setAuthor(author);
+    console.log(author);
+  };
+
   const handleAddBook = () => {
-    let book = { title: "works fine", author: "TZ" };
+    let book = { title: title, author: author };
     let newBookArray = [];
     // let newBooksArray = [...books, book]
 
@@ -34,13 +49,29 @@ export default function BookGrid() {
     <div>
       <div className="w-full flex flex-col">
         <div className="w-full my-5">
-          <button
-            type="button"
-            onClick={handleAddBook}
-            className="bg-blue-500 px-3 py-1 text-white rounded-md"
-          >
-            Add book
-          </button>
+          <form>
+            <input
+              value={title}
+              onChange={handleSetTitle}
+              className="border border-blue-500 mr-1 text-center rounded py-1 px-3 hover:bg-gray-200"
+              placeholder="title"
+              type="text"
+            />
+            <input
+              value={author}
+              onChange={handleSetAuthor}
+              className="border border-blue-500 mr-1 text-center rounded py-1 px-3 hover:bg-gray-200"
+              type="text"
+              placeholder="author"
+            />
+            <button
+              type="button"
+              onClick={handleAddBook}
+              className="bg-blue-500 px-3 py-1 text-white rounded-md"
+            >
+              Add book
+            </button>
+          </form>
         </div>
         <div
           id="book-grid"
